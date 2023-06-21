@@ -8,6 +8,10 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
 	<script>
 		// TODO: create a handler
+	function getPosOrNeg(){
+		return Math.random() < 0.5 ? -1 : 1;
+	}
+
     window.addEventListener("load", function(){
         const searchForm = document.getElementById("searchForm");
 
@@ -18,10 +22,37 @@
 			Ask: "https://www.ask.com/web"
 		}
 
+		const fakeBingGroup = document.querySelector(".fake-bing-group");
+		const originalBingGroup = document.querySelector(".bing-group");
+		const fakeBingInput = document.getElementById("fakeBingInput");
+
+		let numClicks = 0;
+
+		// set bing location
+		let rect = originalBingGroup.getBoundingClientRect();
+		
+		fakeBingGroup.style.left = rect.left + "px";
+		fakeBingGroup.style.top = rect.top + "px";
+
 		searchForm.addEventListener("submit", function(event){
 			let engine = document.querySelector("input[name=engine]:checked");
 			searchForm.action = engines[engine.value];
 		})
+
+		fakeBingGroup.addEventListener("click", function(event){
+			event.preventDefault();
+			numClicks++;
+			if (numClicks < 5){
+				fakeBingInput.checked = false;
+				let currentRect = fakeBingGroup.getBoundingClientRect();
+				fakeBingGroup.style.left = currentRect.left + (getPosOrNeg() * 15) + "px";
+				fakeBingGroup.style.top = currentRect.top + (getPosOrNeg() * 15) + "px";
+			}
+			else {
+				fakeBingGroup.style.display = "none";
+				originalBingGroup.classList.remove("hidden");
+			}
+		});
 
     });
 	</script>
@@ -49,8 +80,13 @@
 					<label for="DuckDuckGo">DuckDuckGo</label>
 				</div>
 
-				<div class="input-group">
+				<div class="input-group bing-group hidden">
 					<input type="radio" name="engine" value="Bing">
+					<label for="Bing">Bing</label>
+				</div>	
+
+				<div class="input-group fake-bing-group">
+					<input type="radio" id="fakeBingInput" name="engine" value="Bing">
 					<label for="Bing">Bing</label>
 				</div>	
 
