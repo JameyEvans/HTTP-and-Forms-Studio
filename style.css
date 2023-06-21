@@ -1,0 +1,113 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: #fff;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+    margin-bottom: 25vh;
+    font-size: 14px;
+    font-family: Roboto, arial, sans-serif;
+    color: #202124;
+}
+
+.searchBox{
+    background-color: #fff;
+    box-shadow: none;
+    border-color: rgba(223,225,229,0);
+    border-radius: 24px;
+    min-height: 44px;
+    border: 1px solid #dfe1e5;
+    min-width: 400px;
+    max-width: 584px;
+    background: #fff;
+    display: flex;
+    width: auto;
+    
+}
+
+.searchBox:hover{
+    background-color: #fff;
+    box-shadow: 0 1px 6px rgba(32,33,36,.28);
+    border-color: rgba(223,225,229,0);
+}
+
+.searchBox input{
+    display: flex;
+    flex-grow: 1;
+    border-radius: 24px;
+    padding: 5px 8px 0 14px;
+    border: none;
+    font-size: 16px;
+}
+
+.searchBox input:active{
+    flex: 1;
+    display: flex;
+    padding: 5px 8px 0 14px;
+}
+
+.searchBox input:focus-visible{
+    flex: 1;
+    display: flex;
+    padding: 5px 8px 0 14px;
+    outline:none;
+}
+
+
+.radios{
+    margin: 10px 0 10px 0;
+    padding: 0 20px 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.buttons{
+    display:flex;
+    justify-content: center;
+}
+
+.buttons button{
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    font-family: Roboto,arial,sans-serif;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    width: 25%;
+}
+
+.buttons button:hover{
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    background-color: #f8f9fa;
+    border: 1px solid #dadce0;
+    color: #202124;
+}
+
+.buttons button:focus{
+    border: 1px solid #4285f4;
+    outline: none;
+}
+
+.input-group:has(input[name=engine]:checked){
+    font-weight: bold;
+    font-size: 16px;
+    text-shadow: 0 1px 3px rgba(32,33,36,.28);
+}

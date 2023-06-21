@@ -2,6 +2,10 @@
 
 <head>
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
 	<script>
 		// TODO: create a handler
     window.addEventListener("load", function(){
@@ -21,28 +25,47 @@
 
     });
 	</script>
+
 </head>
 
 <body>
+	<div class="container">
+		<form id="searchForm" target="_blank">
+			<div class="searchBox">
+				<input type="text" id="searchText" name="q">
+			</div>
+			
 
-	<form id="searchForm" target="_blank">
-		<input type="text" id="searchText" name="q">
+			
 
-		<input type="radio" id="radGoogle" name="engine" value="Google" checked="true">
-		<label for="Google">Google</label>
+			<div class="radios">
+				<div class="input-group">
+					<input type="radio" id="radGoogle" name="engine" value="Google" checked="true">
+					<label for="Google">Google</label>
+				</div>
+			   	
+				<div class="input-group">
+					<input type="radio" name="engine" value="DuckDuckGo">
+					<label for="DuckDuckGo">DuckDuckGo</label>
+				</div>
 
+				<div class="input-group">
+					<input type="radio" name="engine" value="Bing">
+					<label for="Bing">Bing</label>
+				</div>	
 
-		<input type="radio" name="engine" value="DuckDuckGo">
-		<label for="DuckDuckGo">DuckDuckGo</label>
+				<div class="input-group">
+					<input type="radio" name="engine" value="Ask">
+					<label for="Ask">Ask</label>
+				</div>
 
-		<input type="radio" name="engine" value="Bing">
-		<label for="Bing">Bing</label>
+			</div>
+			
+			<div class="buttons">
+				<button id="submitBtn">Go</button>
+			</div>
 
-		<input type="radio" name="engine" value="Ask">
-		<label for="Ask">Ask</label>
-
-		<button id="submitBtn">Go</button>
-
-	</form>
+		</form>
+	</div>
 
 </body>
